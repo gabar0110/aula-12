@@ -5,7 +5,7 @@ st.title("transcrição")
 upload = st.file_uploader("faça upload",type=["wav"])
 if upload  is not None:
     recognizer = sr.Recognizer()
-    with sr.AudioFile(arquivo) as source:
+    with sr.AudioFile(upload) as source:
         st.write("processando audio...")
         audio = recognizer.record(source)
         texto = recognizer.recognize_google(audio,language="pt-BR")
